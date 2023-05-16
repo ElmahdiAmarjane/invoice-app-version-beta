@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>invoice manuellement</title>
+
+    <link rel="stylesheet" href="../styles/invoice-manu.css">
+</head>
+<body>
+         <div class="all">
+              <div class="btns">
+                 <button  id="sendEmail" type="submit">Send Email</button>
+                 <button type="submit">View PDF</button>
+                 <button id="download" type="submit">Download PDF</button>
+               </div>
+               <div class="invoice">
+                  <div class="general-info">
+                     <p>Creation date : 24/04/2023</p>
+                     <span>
+                     <label>Invoice number:</label>
+                     <input type="number"  id="inv-nbr">
+                    </span>
+                  </div>
+                  <div  id="hrone"><hr></div>
+                  <div class="invoice-info">
+                         <div class="invoice-titre">
+                            <h3>Invoice N°: 0015</h3>
+                         </div>
+                         <div class="info-person">
+                            <div class="info-cashier">
+                                <p>Cashier</p>
+                                <input type="text" placeholder="cashier name" id="cashier-name"> <br>
+                                <input type="text" placeholder="cashier email" id="cashier-email"> <br>
+                                <input type="text" placeholder="cashier address" id="cashier-address">
+                            </div>
+                            <div class="info-client">
+                                <p>Client</p>
+                                <input type="text" placeholder="client name" id="client-name"> <br>
+                                <input type="text" placeholder="client email" id="client-email"> <br>
+                                <input type="text" placeholder="client address" id="client-address">
+                            </div>
+                                   
+                  </div>
+                        </div>
+                            <div class="invoice-items">
+                                  <table id="table-items">
+                                     <tr id="tr-head">
+                                        <th>Item</th>
+                                        <th>Unit cost</th>
+                                        <th>Quantity</th>
+                                        <th>Line total</th>
+                                        <th></th>
+                                     </tr>
+                                     <tr>
+                                        <td id="item" ><input id="inputItem" type="text"></td>
+                                        <td id="unitCost"><input id="inpuUnitCost"  type="number"></td>
+                                        <td id="quantity"><input id="inputQuantity" type="number"></td>
+                                        <td id="lineTotal"><input id="inputLineTotal" type="number" disabled="disabled" ></td>
+                                        <td id="remove"><button id="deleteRow" > <img src="../icons/remove-icone.png" alt="" width="10px" > </button></td>
+                                     </tr>
+                                     
+                                  </table>
+                                   <button id="addRow" type="submit">Add Row</button>
+                            </div>
+
+                            <div class="total">
+                              <input type="number" placeholder="Subtotal" id="subtotal"> <br>
+                                <input type="number" placeholder="Taxes" id="tax"> <br>
+                                <input type="number" placeholder="Discount" id="discount"><br>
+                                <input type="number" placeholder="Total" id="total" disabled="disabled">
+                            </div>
+                 
+               </div>
+         </div>    
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+        <script src="../Javascript/invoice-manu.js"></script>
+</body>
+</html>
